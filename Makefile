@@ -31,7 +31,7 @@ build: $(DIST_PATH)/go-httpbin
 
 $(DIST_PATH)/go-httpbin: assets $(GO_SOURCES)
 	mkdir -p $(DIST_PATH)
-	go build -o $(DIST_PATH)/go-httpbin ./cmd/go-httpbin
+	CGO_ENABLED=0 go build -o $(DIST_PATH)/go-httpbin ./cmd/go-httpbin
 
 assets: $(GENERATED_ASSETS_PATH)
 
